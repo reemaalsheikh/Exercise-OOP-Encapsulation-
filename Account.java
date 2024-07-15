@@ -70,11 +70,8 @@ public Account(String id, String name){
 
 
     public int transferTo ( Account another, int amount) {
-    if(amount > 0 && amount <= balance){
-     this.debit(amount);}
-     else{
-            System.out.println("Transfer amount invalid or exceeded balance!");
-        }
+       this.debit(amount);
+        another.credit(amount);
      return balance;
     }
 
